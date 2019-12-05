@@ -1,5 +1,5 @@
 import java.util.HashMap;
-
+import java.util.Scanner;
 public class GradesApplication {
     public static void main(String[] args) {
         HashMap<String, Student> students = new HashMap<>();
@@ -26,7 +26,13 @@ public class GradesApplication {
         students.put("dexter", jacob);
         students.put("squirrel", andrew);
 
-        System.out.println(jacob.getGradeAverage());
+        System.out.println("Welcome!");
+        System.out.println("Here are the GitHub usernames of our students:");
+        for (HashMap.Entry<String, Student> student : students.entrySet()) {
+            System.out.print("|" + student.getKey() + "| ");
+        }
+        System.out.println("What student would you like to see more information on?");
+        Scanner input = new Scanner(System.in);
 
     }
 }
