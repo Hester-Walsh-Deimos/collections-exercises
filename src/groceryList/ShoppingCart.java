@@ -1,13 +1,13 @@
 package groceryList;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Collections;
-import java.io.*;
-import java.util.*;
+
 public class ShoppingCart {
     static ArrayList<Item> cart = new ArrayList<>();
 
-    public static void addItem(){
+    public static void addItem() {
         Scanner input = new Scanner(System.in);
         System.out.println("\n1: Meats\n2: Dairy\n3: Produce\n4: Other\n");
         int option = input.nextInt();
@@ -61,21 +61,20 @@ public class ShoppingCart {
                 addItem();
                 System.out.println("Do you want to add another item?");
                 String yesNo = input.nextLine();
-                if (yesNo.equalsIgnoreCase("yes")){
+                if (yesNo.equalsIgnoreCase("yes")) {
                     addItem();
                 } else {
                     Collections.sort(cart, Item.compareName);
-                    System.out.println("# | Name | Category" );
-                    for (Item item : cart){
+                    System.out.println("# | Name | Category");
+                    for (Item item : cart) {
                         System.out.printf("\n%d - %s - %s", item.quantity, item.name, item.category);
                     }
                     wantsToContinue = false;
                 }
-            }else {
+            } else {
                 wantsToContinue = false;
             }
         }
-
 
 
     }
